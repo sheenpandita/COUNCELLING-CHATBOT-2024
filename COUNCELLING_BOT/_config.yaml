@@ -1,1 +1,66 @@
+# Site settings
+title: BOT
+email: sheenpandita@outlook.in
+description: >
+  Here's a description for the career counseling chatbot:
 
+  **Career Counseling Chatbot**  
+baseurl: ""  # The base URL of your site, leave empty if hosted at the root domain
+url: "https://sheenpandita.com" # The base hostname & protocol for your site
+
+github_username: sheenpandita
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate
+
+# Permalinks
+permalink: /:categories/:year/:month/:day/:title/
+
+# Pagination
+paginate: 5 # Number of posts per page
+paginate_path: "/page:num/"
+
+# Defaults
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Sheen Pandita"
+
+# Exclude these files from production builds
+exclude:
+  - "README.md"
+  - "Gemfile"
+  - "Gemfile.lock"
+
+# Include these files in production builds
+include:
+  - "_pages"
+
+# Markdown settings
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+# Sass settings
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Serve settings
+host: 0.0.0.0
+port: 4000
+
+# Deployment settings (Optional)
+# If you use GitHub Pages or another platform, add deployment-specific configurations here.
