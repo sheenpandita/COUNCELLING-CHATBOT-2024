@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
     "BOT",
+    "LOGIN2BOT",
 ]
 
 MIDDLEWARE = [
