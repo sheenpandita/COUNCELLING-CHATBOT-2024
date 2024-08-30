@@ -1,14 +1,14 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .forms import ProfileUser
-from .models import User
+from LOGIN_AUTH_BOT.forms import ProfileUser
+from LOGIN_AUTH_BOT.models import User
 from django.contrib.auth.hashers import make_password, check_password
 
 
 
 
 def home(request):
-    return render(request, 'BOT/home.html')
+    return render(request, 'home.html')
 
 def register(request):
     if request.method == 'POST':
@@ -22,7 +22,7 @@ def register(request):
             return redirect('login')
     else:
         form = ProfileUser()
-    return render(request, 'BOT/register.html', {'form': form})
+    return render(request, 'register.html', {'form': form})
 
 
 
@@ -41,7 +41,7 @@ def user_login(request):
                 messages.error(request, 'Invalid credentials. Please try again.')
         except User.DoesNotExist:
             messages.error(request, 'User does not exist. Please register first.')
-    return render(request, 'BOT/login.html')
+    return render(request, 'login.html')
 
 
 
@@ -55,6 +55,6 @@ def user_logout(request):
 
 def dashboard(request):
     if 'user_id' in request.session:
-        return render(request, 'BOT/dashboard.html', {'user_name': request.session['user_name']})
+        return render(request, 'dashboard.html', {'user_name': request.session['user_name']})
     else:
         return redirect('login')
