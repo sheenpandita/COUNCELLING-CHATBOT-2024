@@ -1,7 +1,130 @@
-{% extends "base.html" %}
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-color: #f0f4f8; /* Light grayish blue background */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #0056b3; /* Dark blue */
+            color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .navbar-brand, .nav-link {
+            color: #ffffff !important;
+        }
+        .nav-link:hover {
+            color: #cce0ff !important; /* Light blue on hover */
+        }
+        .container {
+            background-color: #ffffff; /* White background for content */
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-top: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+        .card {
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        .card-header {
+            background-color: #007bff; /* Blue color */
+            color: #ffffff;
+            font-size: 1.25rem;
+        }
+        .card-body {
+            font-size: 1rem;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: #ffffff;
+            border-radius: 50px;
+            padding: 0.75rem 2rem;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            padding: 1.5rem;
+            background-color: #0056b3; /* Dark blue */
+            color: #ffffff;
+            text-align: center;
+            font-size: 0.9rem;
+            box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
+        }
+        .footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">Counseling Chatbot</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
 <div class="container">
-    <h2>Welcome, {{ user_name }}</h2>
-    <p>This is your dashboard.</p>
+    <h2 class="mb-4">Welcome, {{ user_name }}</h2>
+    <a href="{% url 'home' %}" class="btn btn-custom mb-4">Go to Home</a> <!-- Added Home link -->
+
+    <div class="card">
+        <div class="card-header">
+            Dashboard Overview
+        </div>
+        <div class="card-body">
+            <p>This is your personalized dashboard. Here you can access all your relevant information and updates.</p>
+            <a href="{% url 'home' %}" class="btn btn-custom">Chat with Bot</a> 
+            {% comment %} ADD BOT URL HERE {% endcomment %}
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            Recent Activities
+        </div>
+        <div class="card-body">
+            <ul class="list-unstyled">
+                <li><i class="fas fa-check-circle"></i> Completed your profile update.</li>
+                <li><i class="fas fa-calendar-check"></i> Scheduled a career counseling session.</li>
+                <li><i class="fas fa-star"></i> Received a new badge for achievements.</li>
+            </ul>
+        </div>
+    </div>
 </div>
-{% endblock %}
+
+
+    <footer class="footer">
+        <p>&copy; 2024 Counseling Chatbot. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
