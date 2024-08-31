@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     "crispy_forms",
      "crispy_bootstrap5",
     "LOGIN_AUTH_BOT",
-    "memcached",
+    
 
 ]
 
@@ -128,10 +128,4 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-        'LOCATION': '127.0.0.1:11211',
-    }
-}
 

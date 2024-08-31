@@ -56,9 +56,9 @@
         </div>
     </nav>
     <div class="container mt-5">
-        {% if request.user.is_authenticated %}
+        {% if request.User.is_authenticated %}
         <div class="hero-logged-in">
-            <h1>Welcome Back, {{ request.user.username }}!</h1>
+            <h1>Welcome Back, {{ request.User.username }}!</h1>
             <p class="welcome-text">Access your personalized dashboard, recent activities, and more.</p>
             <a href="{% url 'dashboard' %}" class="btn btn-custom">Go to Dashboard</a>
         </div>
