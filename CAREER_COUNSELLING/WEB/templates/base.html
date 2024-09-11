@@ -1,0 +1,55 @@
+{% extends "home.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <!-- Hero Section -->
+    <div class="hero-section text-center my-5">
+        <h1 class="display-4">Welcome to Your Career Counseling Bot</h1>
+        <p class="lead">Get personalized career advice, explore opportunities, and make informed decisions about your future. We're here to help you achieve your career goals.</p>
+        <img src="{% static 'CareerCounseling.jpg' %}" alt="CareerCounseling" class="img-fluid mt-4">
+    </div>
+
+    <!-- Features Section -->
+    <div class="row">
+        <!-- Career Guidance Card -->
+        <div class="col-md-4 mb-4">
+            <div class="card" style="border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                <a href="#" style="text-decoration: none; color: inherit;">
+                    <img src="https://via.placeholder.com/120?text=Career+Guidance" alt="Career Guidance" class="card-img-top" style="height: 200px; object-fit: cover;">
+                    <div class="card-body" style="background-color: #333; color: white; padding: 20px;">
+                        <h3 class="card-title" style="font-weight: bold; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);">Career Guidance</h3>
+                        <p>Receive expert advice tailored to your career aspirations and goals.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Salary Trends Card -->
+        <div class="col-md-4 mb-4">
+            <div class="card" style="border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                <a href="{% url 'average_salary' %}" style="text-decoration: none; color: inherit;">
+                    <img src="{% static 'bannerimages/sal.jpeg' %}" alt="Salary Trends" class="card-img-top" style="height: 200px; object-fit: cover;">
+                    <div class="card-body" style="background-color: #333; color: white; padding: 20px;">
+                        <h3 class="card-title" style="font-weight: bold; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);">Explore Salary Trends Across Industries</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Job Opportunities Card -->
+        <div class="col-md-4 mb-4">
+            <div class="card" style="border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                <a href="#" style="text-decoration: none; color: inherit;">
+                    <img src="https://via.placeholder.com/120?text=Job+Opportunities" alt="Job Opportunities" class="card-img-top" style="height: 200px; object-fit: cover;">
+                    <div class="card-body" style="background-color: #333; color: white; padding: 20px;">
+                        <h3 class="card-title" style="font-weight: bold; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);">Job Opportunities</h3>
+                        <p>Explore job openings and career opportunities that match your profile.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

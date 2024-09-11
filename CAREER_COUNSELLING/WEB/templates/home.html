@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Counseling Chatbot</title>
+   <title>{% block title %}Counseling Chatbot{% endblock title  %} </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
@@ -113,6 +114,23 @@
                 font-size: 1rem;
             }
         }
+        .alert-danger {
+            background-color: #ffdddd;
+            border-color: #f5c2c2;
+            color: #a94442;
+          }
+          
+          .alert-info {
+            background-color: #d7effa;
+            border-color: #c3ebef;
+            color: #17a2b8;
+          }
+          
+          .alert-success {
+            background-color: #dff0d8; /* Green for successful registration */
+            border-color: #d6e9c6;
+            color: #3c763d;
+          }
     </style>
 </head>
 <body>
@@ -138,44 +156,34 @@
                     <a class="nav-link" href="#" data-toggle="modal" data-target="#registerModal">Register</a>
                 </li>
                 {% endif %}
+                <li class="nav-item">
+                     <a class="nav-link" href="{% url 'home' %}">Home</a>
+                </li>
             </ul>
         </div>
     </nav>
 
     <!-- Messages Display -->
     {% if messages %}
-    <div class="alert alert-info fixed-top mt-3" style="top: 56px; z-index: 1050;">
-        {% for message in messages %}
-        {{ message }}
-        {% endfor %}
-    </div>
-    {% endif %}
-
-    <div class="container">
-        <div class="hero-section">
-            <h1>Welcome to Your Career Counseling Bot</h1>
-            <p>Get personalized career advice, explore opportunities, and make informed decisions about your future. We're here to help you achieve your career goals.</p>
-            <img src="https://via.placeholder.com/1200x600?text=Career+Counseling" alt="Career Counseling">
+    {% for message in messages %}
+      {% if message.extra_tags == 'invalid_credentials' %}
+        <div class="alert alert-danger fixed-top mt-3" style="top: 56px; z-index: 1050;">
+          {{ message }}
         </div>
-        <div class="row">
-            <div class="col-md-4 feature-box">
-                <img src="https://via.placeholder.com/120?text=Career+Guidance" alt="Career Guidance">
-                <h3>Career Guidance</h3>
-                <p>Receive expert advice tailored to your career aspirations and goals.</p>
-            </div>
-            <div class="col-md-4 feature-box">
-                <img src="https://via.placeholder.com/120?text=Educational+Resources" alt="Educational Resources">
-                <h3>Educational Resources</h3>
-                <p>Access a range of resources to help you enhance your skills and knowledge.</p>
-            </div>
-            <div class="col-md-4 feature-box">
-                <img src="https://via.placeholder.com/120?text=Job+Opportunities" alt="Job Opportunities">
-                <h3>Job Opportunities</h3>
-                <p>Explore job openings and career opportunities that match your profile.</p>
-            </div>
+      {% elif message.extra_tags == 'successful' %}
+        <div class="alert alert-success fixed-top mt-3" style="top: 56px; z-index: 1050;">
+          {{ message }}
         </div>
-    </div>
-
+      {% else %}
+        <div class="alert alert-info fixed-top mt-3" style="top: 56px; z-index: 1050;">
+          {{ message }}
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% block content %}
+   
+{% endblock content %}
     <footer class="footer mt-5">
         <p>&copy; 2024 Counseling Chatbot. All rights reserved.</p>
     </footer>
@@ -239,6 +247,8 @@
             </div>
         </div>
     </div>
+
+  
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>

@@ -1,0 +1,15 @@
+{% extends "home.html" %}
+{% block title %}
+MY ACCOUNT 
+{% endblock title %}
+{% block content %}
+<div class="container">
+    <h2>Your Profile</h2>
+    <ul class="list-unstyled">
+        <li><strong>Name:</strong> {{ User.name }}</li>
+        <li><strong>Email:</strong> {{ User.email }}</li>
+        {% comment %} <li><strong>Registered On:</strong> {{ user.date_joined }}</li> {% endcomment %}
+    </ul>
+    {% comment %} <a href="{% url 'edit_profile' %}" class="btn btn-custom">Edit Profile</a> {% endcomment %}
+</div>
+{% endblock content %}
