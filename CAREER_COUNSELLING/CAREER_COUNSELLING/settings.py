@@ -37,10 +37,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+     "WEB",
     "crispy_forms",
      "crispy_bootstrap5",
     "LOGIN_AUTH_BOT",
-    "WEB",
+    
 
 ]
 
@@ -126,3 +127,5 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
