@@ -1,0 +1,11 @@
+# Django and related packages
+Django==4.2.3
+
+# Data manipulation and scientific computing
+numpy==1.25.0
+pandas==2.0.3
+
+# Data visualization
+matplotlib==3.7.1
+seaborn==0.12.2
+
