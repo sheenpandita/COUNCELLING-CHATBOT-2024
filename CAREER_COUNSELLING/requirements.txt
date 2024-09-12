@@ -1,5 +1,7 @@
 # Django and related packages
 Django==4.2.3
+django-crispy-forms
+crispy_bootstrap5
 
 # Data manipulation and scientific computing
 numpy==1.25.0
