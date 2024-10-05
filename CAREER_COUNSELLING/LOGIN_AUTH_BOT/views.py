@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.contrib.auth.models import User
-from LOGIN_AUTH_BOT.forms import ProfileUser
+from LOGIN_AUTH_BOT.forms import  ProfileUser
+from LOGIN_AUTH_BOT.models import User
 from django.contrib.auth.hashers import make_password, check_password
 
 
