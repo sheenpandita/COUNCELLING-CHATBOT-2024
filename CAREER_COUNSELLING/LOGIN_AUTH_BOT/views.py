@@ -3,6 +3,8 @@ from django.contrib import messages
 from LOGIN_AUTH_BOT.forms import  ProfileUser
 from LOGIN_AUTH_BOT.models import User
 from django.contrib.auth.hashers import make_password, check_password
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
 
 
@@ -65,3 +67,8 @@ def user_profile(request):
 #_____________________________________________________________________________________________________________________________
 def average_salary(request):
     return render(request, 'average_salary.html')
+
+
+#----------------------------------------------------------------------------------------
+def botUI(request):
+    return render(request, 'botUI.html')    
