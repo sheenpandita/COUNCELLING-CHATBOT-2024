@@ -12,4 +12,8 @@ urlpatterns = [
     path('user_profile', views.user_profile, name='user_profile'),
     #----------------------------------------------------------------
     path('average_salary', views.average_salary, name='average_salary'),
+    #----------------------------------------------------------------
+    path('botUI', views.botUI, name='botUI'),
+
+
 ]

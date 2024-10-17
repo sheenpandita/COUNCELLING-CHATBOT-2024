@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./CAREER_COUNSELLING/WEB/BACKEND"
+    ]
+}

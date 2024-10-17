@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from LOGIN_AUTH_BOT.forms import  User
+from LOGIN_AUTH_BOT.forms import  ProfileUser
 from LOGIN_AUTH_BOT.models import User
 from django.contrib.auth.hashers import make_password, check_password
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
 
 
@@ -12,7 +14,7 @@ def home(request):
 
 def register(request):
     if request.method == 'POST':
-        form = User(request.POST)
+        form = ProfileUser(request.POST)
         if form.is_valid():
             # Hash the password before saving
             user = form.save(commit=False)
@@ -21,7 +23,7 @@ def register(request):
             messages.success(request, 'Your account has been created! You can now log in.')
             return redirect('login')
     else:
-        form = User()
+        form = ProfileUser()
     return render(request, 'BOT/register.html', {'form': form})
 
 
@@ -65,3 +67,8 @@ def user_profile(request):
 #_____________________________________________________________________________________________________________________________
 def average_salary(request):
     return render(request, 'average_salary.html')
+
+
+#----------------------------------------------------------------------------------------
+def botUI(request):
+    return render(request, 'botUI.html')    
