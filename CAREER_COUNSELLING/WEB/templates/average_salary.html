@@ -1,0 +1,106 @@
+{% extends "home.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <!-- Header Section -->
+    <div class="text-center my-5">
+        <h1 class="display-4 font-weight-bold">Explore Salaries Across Different Domains</h1>
+        <p class="lead">
+            Discover valuable insights into the average salaries across various career fields in India. Make informed decisions about your career path based on comprehensive financial data.
+        </p>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="row">
+        <div class="col-md-12 mb-5">
+            <div class="text-center mb-4">
+                <img src="{% static 'visualization/average_salary_by_field_inr.png' %}" alt="Average Salary by Field in INR" class="img-fluid" style="width: 100%; height: auto;">
+            </div>
+            <h3 class="mb-4 font-weight-bold">Understanding Financial Prospects by Domain</h3>
+            <p class="lead mb-4">
+                Navigate your career choices with confidence by understanding potential earnings in various fields. The chart above illustrates average salaries across different domains in India. Here’s a closer look at some key industries:
+            </p>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="border p-4 rounded shadow-sm">
+                        <h4 class="font-weight-bold">Technology</h4>
+                        <p>
+                            The technology sector is renowned for its high earning potential. Careers in software development, data science, and cybersecurity offer lucrative salaries, especially for experienced professionals.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="border p-4 rounded shadow-sm">
+                        <h4 class="font-weight-bold">Healthcare</h4>
+                        <p>
+                            Healthcare roles, particularly for doctors and specialized nurses, provide some of the highest salaries. The growing demand for healthcare services contributes to these rewarding opportunities.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="border p-4 rounded shadow-sm">
+                        <h4 class="font-weight-bold">Finance</h4>
+                        <p>
+                            Finance professionals, including those in investment banking and financial analysis, enjoy substantial compensation. Certifications such as CFA and CPA can further enhance earning potential.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="border p-4 rounded shadow-sm">
+                        <h4 class="font-weight-bold">Education</h4>
+                        <p>
+                            Although traditionally less lucrative, the education sector offers competitive salaries, especially for administrative roles or positions in specialized subjects.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="border p-4 rounded shadow-sm">
+                        <h4 class="font-weight-bold">Marketing & Sales</h4>
+                        <p>
+                            Careers in marketing and sales can be highly rewarding, with performance-based incentives often significantly boosting earnings.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <h3 class="mb-4 font-weight-bold">Beyond the Average</h3>
+            <p class="lead mb-4">
+                While certain fields like technology and healthcare offer higher average salaries, other factors can influence your earnings significantly:
+            </p>
+            <ul class="list-group mb-4">
+                <li class="list-group-item"><strong>Experience:</strong> More years of experience generally correlate with higher salary.</li>
+                <li class="list-group-item"><strong>Location:</strong> Salaries vary between urban and rural areas, with metropolitan cities often offering higher pay.</li>
+                <li class="list-group-item"><strong>Company Size:</strong> Larger companies and multinational corporations tend to offer higher salaries.</li>
+                <li class="list-group-item"><strong>Education:</strong> Advanced degrees and certifications can enhance your earning potential.</li>
+                <li class="list-group-item"><strong>Negotiation Skills:</strong> Effective negotiation can help you secure a salary that reflects your value.</li>
+            </ul>
+            <h3 class="mb-4 font-weight-bold">Emerging Trends</h3>
+            <p class="lead mb-4">
+                Stay ahead of the curve by considering these emerging trends that might impact salary structures and career opportunities:
+            </p>
+            <ul class="list-group mb-4">
+                <li class="list-group-item"><strong>Remote Work:</strong> The rise of remote work may impact salary structures and work-life balance.</li>
+                <li class="list-group-item"><strong>Skill-Based Pay:</strong> Companies are increasingly valuing specific skill sets over traditional qualifications.</li>
+                <li class="list-group-item"><strong>Gig Economy:</strong> The growth of the gig economy introduces flexible work arrangements and new income streams.</li>
+            </ul>
+            <h3 class="mb-4 font-weight-bold">Additional Considerations</h3>
+            <p class="lead mb-4">
+                When evaluating salary offers, also consider:
+            </p>
+            <ul class="list-group mb-4">
+                <li class="list-group-item"><strong>Cost of Living:</strong> Factor in the cost of living in different regions.</li>
+                <li class="list-group-item"><strong>Job Satisfaction:</strong> Consider factors like job satisfaction, work-life balance, and career growth opportunities.</li>
+                <li class="list-group-item"><strong>Industry Outlook:</strong> Research the future prospects of different industries to ensure long-term career stability.</li>
+            </ul>
+            <p class="lead mb-4">
+                **Remember:** Salary is just one aspect of a fulfilling career. By considering these factors and conducting thorough research, you can make well-informed decisions aligned with your professional goals and financial aspirations.
+            </p>
+            <p class="lead">
+                <strong>Want to explore specific industries or job roles in more detail?</strong> [Link to a relevant resource or salary calculator]
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
