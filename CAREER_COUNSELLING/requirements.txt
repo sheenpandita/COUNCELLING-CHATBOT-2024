@@ -19,3 +19,7 @@ six==1.16.0
 sqlparse==0.5.1
 tzdata==2024.1
 wordcloud==1.9.3
+streamlit
+google-generativeai
+python-dotenv
+supervisor
